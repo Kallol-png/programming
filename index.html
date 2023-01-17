@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown menubar part 2</title>
+    <!-- Font awesome link -->
+    <script src="https://kit.fontawesome.com/3afb494d47.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+      .Navision{
+        background-image: linear-gradient(dodgerblue,rgb(3, 46, 88));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+      }
+      .Navision>ul{
+        display: flex;
+        margin-right: 50px;
+
+      }
+      .Navision>ul>li{
+        list-style: none;
+        
+        margin: 0px 5px;
+        padding: 15px 0px;
+        margin-left: -5px;
+        
+      }
+      .Navision>ul>li>a{
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        border-right: 1px solid white;
+        padding: 15px 20px;
+        transition: 0.5s;
+        
+      }
+      .Navision>ul>li:first-child>a{
+        border-left: 1px solid white;
+      }
+      .Navision>ul>li:hover>a{
+        background-color: rgb(2, 64, 125);
+      }
+      .logo>h2{
+         margin-left: 50px;
+        color: white;
+      
+      }
+      .logofirstletter{
+        color:yellow;
+        font-size: 30px;
+      }
+      /* dropdownmenu code start */
+      .dropdownmenu{
+        background-color: dodgerblue;
+        margin-top: 15px;
+        text-align: center;
+        width: 190px;
+        position:absolute;
+        opacity: 0px;
+        visibility: hidden;
+        transition: 0.5s;
+        transform: scaley(0);
+        transform-origin: top center;
+        box-shadow: 10px 10px 8px black;
+       
+
+
+
+      }
+      .dropdownmenu>li{
+        list-style: none;
+        padding: 10px 0;
+        border-bottom: 1px solid white;
+      }
+      .dropdownmenu>li:hover{
+        background-color:rgb(2, 64, 125);
+      }
+      .dropdownmenu>li:first-child{
+        border-top: 1px solid white;
+      }
+      .dropdownmenu>li>a{
+        text-decoration: none;
+        color: white;
+      }
+      .Navision>ul>li:hover>.dropdownmenu{
+        opacity: 1px;
+        visibility: visible;
+        transform: scaley(1);
+      }
+      /* Hero area comments start here */
+      #Main-header{
+        background-image:linear-gradient(rgba(0, 0, 0, 0.132),rgba(0, 0, 0, 0.329)), url(african-girl-school-student-e-260nw-1685909200.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        text-align: center;        
+        height: 90vh;
+        
+      }
+      .header-container{
+        padding-top: 100px;
+      }
+      .header-container>h2{
+        background-color: rgba(5, 67, 130, 0.66);
+        width: 500px;
+        margin: 20px auto;
+        font-size: 50px;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+      }
+      .header-container>button{
+        font-size: 22px;
+        padding: 15px 25px;
+        background-color: #063768;
+        border-radius: 30px 10px 30px 10px;
+        color: white;
+        border: 4px solid green;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .header-container>button:hover{
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .header-container>h4{
+        font-size: 25px;
+        color: rgb(28, 27, 27);
+      }
+      .header-container>h5{
+        font-size: 25px;
+        color: rgb(28, 27, 27);
+        margin-bottom: 30px;
+      }
+      .socialicon>a{
+        color: white;
+        text-decoration: none;
+      }
+      .socialicon>a>i{
+        width: 50px;
+        height: 50px;
+        line-height: 1.6;
+        font-size: 30px;
+        background-color: rgba(0, 128, 0, 0);
+        padding: 5px;
+        border: 2px solid white;
+        margin: 10px 5px;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+      .socialicon>a>i:hover{
+        background-color: #063768;
+        border: 2px solid green;
+        transform: rotate(360deg);
+      }
+      /* First section comments start here */
+      #First-section{
+        background-color: lightgrey;
+      }
+      #First-container{
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        justify-content: space-between;
+        padding: 100px 0;
+      }
+      .First-design{
+        width: 300px;
+        
+        text-align: center;
+        padding: 30px 10px;
+        transition: 0.5s;
+      }
+      .First-design>i{
+        font-size: 40px;
+      }
+      .First-design>h3{
+        margin: 15px 0;
+      }
+      .First-design:hover{
+        box-shadow: 3px 3px 10px gray;
+      }
+
+      /* second section code start here */
+      .smartarea-title>h1{
+        font-size: 30px ;
+        text-align: center;
+        position: relative;
+        
+      }
+  .smartarea-title > h1::after {
+  content: '';
+  position: absolute;
+  width: 78px;
+  height: 5px;
+  top: 37px;
+  left: 719px;
+  background-color: rgb(135, 5, 5);
+}
+.smart-area{
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.smartarea-text{
+  margin: 20px 0;
+  width: 500px;
+  
+}
+.smartarea-text>h4{
+  color:rgb(135, 5, 5);
+  
+
+}
+.smartarea-text>h5{
+  margin: 20px 0;
+  font-size: 20px;
+  
+}
+.smartarea-text>a{
+  text-decoration: none;
+  background-color: rgb(135, 5, 5);
+  color: white;
+  margin: 20px 0;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: 0.5s;
+    
+}
+.smartarea-text>a:hover{
+  background-color:rgb(85, 3, 3); 
+}
+/* Third section comments start here */
+#Services section{
+  background-color: #fafafa;
+}
+.services-area-title{
+  text-align: center;
+  padding: 40px 0 60px 0;
+}
+.services-area-title>h2{
+  font-size: 30px;
+}
+.each-services-parents{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap:20px;
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 60px;
+
+}
+.each-services{
+  background-color: lightblue;
+  text-align: center;
+  padding: 30px 0;
+  transition: 0.5s;
+}
+.each-services:hover{
+  background-color:#7ec1d7 ;
+}
+.each-services>i{
+  font-size: 40px;
+  color:rgba(135, 5, 5, 0.956) ;
+}
+.each-services>h3{
+  margin: 15px 0;
+}
+/* fourth section comments start here */
+.pricing-area-container{
+  width: 1000px;
+  
+  margin: auto;
+  padding-bottom: 100px;
+}
+.pricing-title{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 0;
+}
+.pricing-area-parent{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.single-card-img{
+  width: 310px;
+  
+  
+}
+.single-card-img>img{
+  max-width: 100%;
+}
+.single-card{
+  width: 310px;
+  text-align: center;
+  box-shadow: 5px 5px 10px gray;
+ 
+}
+.single-card>h2{
+  font-size: 30px;
+  margin: 10px 0;
+}
+.pricing-area{
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+  padding: 15px 0;
+  margin: 15px 20px;
+}
+.pricing-area>.span1{
+  font-size: 25px;
+}
+.pricing-area>.span2{
+  color: gray;
+}
+.single-card>button{
+  background-color:rgb(135, 5, 5) ;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.single-card>button:hover{
+  background-color: rgba(135, 5, 5, 0);
+  color: black;
+}
+.single-card>a{
+  text-decoration: none;
+  color: gray;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  display: inline-block;
+}
+/* Testimonial section comments start here */
+#testomonial-section{
+  background-color: bisque;
+}
+.testo-area{
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.testimonial-title{
+  text-align: center;
+  padding: 50px 0;
+}
+.testimonial-title h2{
+  font-size: 35px;
+  margin-bottom: 10px ;
+
+}
+.testimonial-title h4{
+  color: gray;
+  letter-spacing: 0.25em;
+}
+.testo-single-card-parents{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap:25px;
+}
+.testo-single-card{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  
+}
+.testo-img-div{
+  width: 200px;
+  margin-right: 20px;
+  
+  border-radius: 50%;
+}
+.testo-img-div img{
+  max-width: 100%;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+.testo-span{
+  font-size: 22px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.star-ratting{
+  color: #ffa534;
+  margin-top: 10px;
+}
+/* Parallax section comments start here */
+#parallax-section{
+  background-image: url(parallax.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 80px 0;
+  margin-bottom: 50px;
+  
+}
+.parallax-item-parents{
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+}
+.parallax-item i{
+  font-size: 40px;
+}
+.parallax-item h2{
+  font-size: 40px;
+  margin: 20px 0;
+}
+/* Blog section comments starts here */
+.blog-container{
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.blog-item-parents{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap:25px;
+}
+.blog-image{
+  max-width: 100%;
+  height: 250px;
+  transition:0.5s;
+  
+}
+.blog-icon{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.blog-image-icon-div{
+  position: relative;
+  overflow: hidden;
+}
+.blog-image-icon-div i{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.blog-image-icon-div:hover .blog-icon{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.356);
+}
+.blog-image-icon-div:hover .blog-image{
+  transform: scale(1.6);
+}
+.single-item-text{
+  text-align: center;
+  margin: 10px 0;
+}
+.single-item-text p{
+  color: rgb(96, 93, 93);
+  margin-top: 10px;
+}
+/* contact section comments code start here */
+.contact-container{
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.form-parents{
+  background-color: #EAECF0;
+  display: flex;
+}
+.fullname-email-parent{
+  display: flex;
+}
+.fullname-email-parent input{
+  width: 200px;
+  height: 40px;
+  margin: 0 20px;
+  border: none;
+  padding: 0 10px;
+}
+.fullname-email-parent h4{
+  margin: 40px 20px 10px 20px;
+}
+.form-tag{
+  width: 600px;
+}
+.subject-input-text{
+  margin: 20px 20px 10px 20px;
+}
+.subject-input{
+  width: 85%;
+  height: 40px;
+  margin: 0 20px;
+  border: none;
+  padding: 0 10px;
+}
+.form-textarea{
+  width: 85%;
+  height: 100px;
+  border: none;
+  margin: 0 20px;
+  padding: 5px 10px;
+}
+.form-button{
+  background-color: #3252AF;
+  color: white;
+  padding: 10px;
+  margin: 20px 0 0 20px;
+  border-radius: 5px;
+  border: none;
+
+}
+.form-address-parents{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.form-single-address{
+  text-align: center;
+}
+.form-single-address i{
+  font-size: 20px;
+  background-color:#3252AF;
+  padding: 20px;
+  border-radius: 50%;
+  color: white;
+  margin-bottom: 10px;
+}
+.form-single-address span{
+  font-weight: bold;
+}
+/* Footer section code start here */
+footer{
+  background-color: #023364;
+  color: gray;
+}
+.footer-container{
+  width: 1000px;
+  margin: auto;
+  
+}
+.footer-singleitem-parents{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-singleitem{
+  width: 220px;
+  overflow: hidden;
+
+}
+.footer-singleitem h3{
+  color: white;
+  margin: 50px 0 20px 0;
+}
+.footer-firstdiv-p1{
+  margin-bottom: 20px;
+}
+.footer-firstdiv-p2{
+  margin: 10px 0;
+}
+.footer-singleitem i{
+  color: white;
+}
+.footer-singleitem-parents .footer-singleitem:nth-child(2) p{
+  margin: 10px 0;
+}
+.footer-singleitem-parents .footer-singleitem:nth-child(3) p{
+  margin: 10px 0;
+}
+.footer-singleitem-parents .footer-singleitem:nth-child(4) p{
+  margin: 10px 0;
+}
+.footer-singleitem-parents .footer-singleitem:nth-child(4) a{
+  text-decoration: none;
+  color: brown;
+}
+.footer-menuitem ul{
+  display: flex;
+  justify-content: center;
+
+}
+.footer-menuitem ul li{
+  list-style-type: none;
+  margin: 20px;
+
+
+}
+.footer-menuitem ul li a{
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+color: gray;
+}
+.footer-menuitem p{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.footer-menuitem span{
+  color: brown;
+}
+hr{
+  margin-top: 40px;
+}
+ 
+
+
+      
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="Navision">
+            <div class="logo">
+                <h2><span class="logofirstletter">P</span>rogramming shikhbo</h2>
+             </div>
+             <ul>
+                <li><a href="#">Home</a>
+                  <ul class="dropdownmenu">
+                    <li><a href="#">Home-1</a></li>
+                    <li><a href="#">Home-2</a></li>
+                    <li><a href="#">Home-3</a></li>
+                    <li><a href="#">Home-4</a></li>
+                    <li><a href="#">Home-5</a></li>
+
+                  </ul>
+                
+                
+                </li>
+                <li><a href="#">Services</a>
+                  <ul class="dropdownmenu">
+                    <li><a href="#">service-1</a></li>
+                    <li><a href="#">service-2</a></li>
+                    <li><a href="#">service-3</a></li>
+                    <li><a href="#">service-4</a></li>
+                    <li><a href="#">service-5</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="#">Products</a>
+                  <ul class="dropdownmenu">
+                    <li><a href="#">product-1</a></li>
+                    <li><a href="#">product-2</a></li>
+                    <li><a href="#">product-3</a></li>
+                    <li><a href="#">product-4</a></li>
+                    <li><a href="#">product-5</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="#">About us</a>
+                  <ul class="dropdownmenu">
+                    <li><a href="#">About us-1</a></li>
+                    <li><a href="#">About us-2</a></li>
+                    <li><a href="#">About us-3</a></li>
+                    <li><a href="#">About us-4</a></li>
+                    <li><a href="#">About us-5</a></li>
+
+                  </ul>                
+    
+                </li>
+                <li><a href="#">Contact us</a>
+                  <ul class="dropdownmenu">
+                    <li><a href="#">Contact us-1</a></li>
+                    <li><a href="#">Contact us-2</a></li>
+                    <li><a href="#">Contact us-3</a></li>
+                    <li><a href="#">Contact us-4</a></li>
+                    <li><a href="#">Contact us-5</a></li>
+
+                  </ul>
+                </li>
+
+             </ul>
+
+        </nav>
+        <!-- Hero area start here -->
+        <div id="Main-header">
+          <div class="header-container">
+            <h4>You can learn with us!</h4>
+            <h2>Welcome to programming shikhbo</h2>
+            <h5>with a lot of language</h5>
+            <div class="socialicon">
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+
+           </div>
+                      
+            <button>purchase of course</button>
+
+          </div>
+
+        </div>
+
+    </header>
+    <!-- First section code start here -->
+    <main>
+      <section id="First-section">
+        <div id="First-container">
+          <div class="First-design">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Learn programming</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus vitae officia provident odit eaque in quis impedit voluptates sint eveniet.
+            </p>
+          </div>
+          <div class="First-design">
+            <i class="fa-regular fa-heart"></i>
+            <h3>Web Devloper</h3>Web-devloper
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus vitae officia provident odit eaque in quis impedit voluptates sint eveniet.
+            </p>
+          </div>
+          <div class="First-design">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>Learn Freelancing</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus vitae officia provident odit eaque in quis impedit voluptates sint eveniet.
+            </p>
+          </div>
+
+        </div>
+      </section>
+      <!-- second section code start here -->
+      <section>
+
+        <div>
+          <div class="smartarea-title">
+            <h1>Smart Area</h1>
+          </div>
+          <div class="smart-area">
+            <div>
+              <img src="smart women.jpg" alt="">
+            </div>
+            <div class="smartarea-text">
+              <h4>TRY SOMETHING NEW FOR YOU!</h4>
+              <H5>Create your own business</H5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem, temporibus excepturi, rerum voluptates nisi accusantium est vitae, qui voluptatem eveniet libero officiis pariatur quasi sed fuga perspiciatis natus facilis voluptatum ad! Voluptate similique accusamus maiores quas iste fugit id sapiente vel cupiditate fuga officia, magnam, incidunt dolore inventore quidem sunt corrupti ab. Quam voluptate reprehenderit obcaecati eos vero voluptatibus, iure qui odit aspernatur impedit, maiores ratione repellat suscipit doloremque modi deleniti vel! Ad molestiae voluptatibus beatae deserunt aliquam nostrum nobis sequi quidem voluptatum voluptas. Exercitationem adipisci magnam doloribus quia optio, beatae perferendis animi est consequatur corporis minus repellendus, ab officia enim dolorum aspernatur similique dignissimos facere accusamus. At quod rem ex non, totam quam illo suscipit ab quo beatae tempora. At minima dolorum nisi itaque molestiae blanditiis quaerat in. Exercitationem odit labore quidem esse sint? Corporis doloremque facere repellendus tempora error neque numquam molestias temporibus nostrum harum praesentium dolores, similique architecto dolorum sint itaque quisquam soluta eum eius pariatur dolor iste quaerat dignissimos repellat. Voluptas soluta tenetur enim eum, facilis harum? Dolore ipsa harum tempora rerum ipsam illum veniam, nulla, optio magni perferendis molestias minima quis quia, corrupti magnam numquam quam. Dolore tenetur possimus adipisci officia similique ipsum perferendis.</p>
+              <a href="#">Check out</a>
+
+            </div>
+
+          </div>
+         </div>
+       
+      </section>
+      <!-- Third section start here -->
+      <section id="Services section">
+        <div>
+          <div class="services-area-title">
+            <h4>We provide only quality</h4>
+            <h2>Our Primary Services</h2>
+          </div>
+          <div class="each-services-parents">
+            <div class="each-services">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <h3>Visual Composer</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div class="each-services">
+            <div class="each-services">
+              <i class="fa-solid fa-tree"></i>
+              <h3>Fully Resposive</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div>
+            <div class="each-services">
+              <i class="fa-solid fa-basket-shopping"></i>
+              <h3>E-Commerce</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div>
+            <div class="each-services">
+              <i class="fa-solid fa-lightbulb"></i>
+              <h3>Clean & Optimized</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div>
+            <div class="each-services">
+              <i class="fa-solid fa-paper-plane"></i>
+              <h3>High Speed Load</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div>
+            <div class="each-services">
+              <i class="fa-solid fa-life-ring"></i>
+              <h3>Engine SEO Ready</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, iusto quas inventore facilis ipsam exercitationem suscipit harum debitis ea itaque.</p>
+            </div>
+                                  
+          </div>
+
+        </div>
+      </section>
+      <!-- Fourth section code start here -->
+      <section>
+        <div class="pricing-area-container">
+          <div class="pricing-title">
+            <h2>Course Pricing</h2>
+          </div>
+          <div class="pricing-area-parent">
+            <div class="single-card">
+            <div class="single-card-img">
+              <img src="JS.webp" alt="">
+            </div>
+            
+              <h2>JavaScript</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea aliquam dignissimos asperiores reiciendis neque illo accusantium et explicabo nisi pariatur?</p>
+            
+            <div class="pricing-area">
+              <span class="span1">$29</span>
+              <span class="span2">per month</span>
+            </div>
+            
+              <button>Get Started</button><br>
+              <a href="#">Course Outline</a>
+           </div>
+            
+            <div class="single-card">
+              <div class="single-card-img">
+                <img src="C++.jpg" alt="">
+              </div>
+              
+                <h2>C++</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea aliquam dignissimos asperiores reiciendis neque illo accusantium et explicabo nisi pariatur?</p>
+              
+              <div class="pricing-area">
+                <span class="span1">$29</span>
+                <span class="span2">per month</span>
+              </div>
+              
+                <button>Get Started</button><br>
+                <a href="#">Course Outline</a>
+            </div>
+            <div class="single-card">
+              <div class="single-card-img">
+                <img src="python.jpg" alt="">
+              </div>
+              
+                <h2>Python</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea aliquam dignissimos asperiores reiciendis neque illo accusantium et explicabo nisi pariatur?</p>
+              
+              <div class="pricing-area">
+                <span class="span1">$29</span>
+                <span class="span2">per month</span>
+              </div>
+              
+                <button>Get Started</button><br>
+                <a href="#">Course Outline</a>
+            </div>
+          </div>
+
+          </div>
+      </section>
+      <!-- Testimonial section start here. -->
+      <section id="testomonial-section">
+        <div class="testo-area">
+          <div class="testimonial-title">
+            <h2>Testimonials</h2>
+            <h4>Happy Customers</h4>
+          </div>
+          <div class="testo-single-card-parents">
+            <div class="testo-single-card">
+              <div class="testo-img-div">
+                <img src="testomonial-1.jpg" alt="">
+              </div>
+              <div>
+                <span class="testo-span">John Doe</span>
+                <span>-Google Inc.</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in architecto nam ut ea quis!</p>
+                <div class="star-ratting">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+            <div class="testo-single-card">
+              <div class="testo-img-div">
+                <img src="testomonial-2.png" alt="">
+              </div>
+              <div>
+                <span class="testo-span">Mila Markovna</span>
+                <span>-Apple Inc.</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in architecto nam ut ea quis!</p>
+                <div class="star-ratting">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="testo-single-card">
+              <div class="testo-img-div">
+                <img src="testomonial-3.png" alt="">
+              </div>
+              <div>
+                <span class="testo-span">Michel Artez</span>
+                <span>-Yahoo Inc.</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in architecto nam ut ea quis!</p>
+                <div class="star-ratting">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="testo-single-card">
+              <div class="testo-img-div">
+                <img src="testomonial-4.png" alt="">
+              </div>
+              <div>
+                <span class="testo-span">John Romer</span>
+                <span>-Twitter Inc.</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in architecto nam ut ea quis!</p>
+                <div class="star-ratting">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- Parallax section start here -->
+      <section id="parallax-section">
+
+        <div class="parallax-item-parents">
+
+          <div class="parallax-item">
+            <i class="fa-regular fa-face-smile"></i>
+            <h2>970</h2>
+            <h3>Happy Clients</h3>
+  
+          </div>
+  
+          <div class="parallax-item">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <h2>510</h2>
+            <h3>Projects Completed</h3>
+  
+          </div>
+  
+          <div class="parallax-item">
+            <i class="fa-solid fa-trophy"></i>
+            <h2>700</h2>
+            <h3>Awards Won</h3>
+  
+          </div>
+  
+          <div class="parallax-item">
+            <i class="fa-regular fa-envelope"></i>
+            <h2>850</h2>
+            <h3>Letters sent</h3>
+  
+          </div>
+        </div>
+      </section>
+      <!-- Blog section start here -->
+      <section>
+        <div class="blog-container">
+
+          <div class="testimonial-title">
+            <h2>From Blog</h2>
+            <h4>awesome blog</h4>
+          </div>
+          <div class="blog-item-parents">
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog1.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-solid fa-pen-fancy"></i>
+                  <h5>Gift Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Gift Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>             
+            </div>
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog2.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-regular fa-camera-retro"></i>
+                  <h5>Wood Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Wood Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>
+             
+            </div>
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog3.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <h5>Cycle Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Cycle Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>
+             
+            </div>
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog4.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-solid fa-cake-candles"></i>
+                  <h5>Birth-day Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Birth-day Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>
+             
+            </div>
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog5.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-solid fa-ice-cream"></i>
+                  <h5>Ice-cream Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Ice-cream Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>
+             
+            </div>
+
+            <div class="single-blog-item">
+              <div class="blog-image-icon-div">
+                <img class="blog-image" src="blog6.jpg" alt="">
+                <div class="blog-icon">
+                  <i class="fa-solid fa-house"></i>
+                  <h5>Drawing Session- Blog</h5>
+
+                </div>
+              </div>
+              <div class="single-item-text">
+                <h3>Drawing Session- Blog</h3>
+                <p>14th june, 2022 by programming shikhbo</p>
+              </div>
+             
+            </div>
+
+          </div>
+           
+        </div>
+      </section>
+      <!-- Contact section start here -->
+      <section>
+        <div class="contact-container">
+
+          <div class="testimonial-title">
+            <h2>Contact Us</h2>
+            <h4>Contact Form</h4>
+          </div>
+
+          <div>
+
+            <div class="form-parents">
+
+             <form class="form-tag">
+              <div class="fullname-email-parent">
+                <div>
+                  <h4>Full Name:</h4>
+                  <input type="text" name="Fullname" id="Fullname" placeholder="Full name">
+                </div>
+                <div>
+                  <h4>Email Address:</h4>
+                  <input type="email" name="email" id="email" placeholder="E-mail">
+                </div>
+                                
+              </div>
+              <h4 class="subject-input-text">Subject:</h4>
+              <input class="subject-input"type="text" name="Subject" id="subject" placeholder="subject">
+              <h4 class="subject-input-text">Message:</h4>
+              <textarea class="form-textarea" placeholder="message" name="" id="" ></textarea>
+
+              <input class="form-button" type="submit" value="send message">
+
+             </form>
+             <div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118103.33518813718!2d91.74982713382335!3d22.32607810592976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8a64095dfd3%3A0x5015cc5bcb6905d9!2z4Kaa4Kaf4KeN4Kaf4KaX4KeN4Kaw4Ka-4Kau!5e0!3m2!1sbn!2sbd!4v1667027537498!5m2!1sbn!2sbd" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             </div>
+
+             </div>
+
+            </div>
+
+            <div class="form-address-parents">
+              <div class="form-single-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <p><span>Address:</span>Anderkilla, Chittagong</p>
+              </div>
+              <div class="form-single-address">
+                <i class="fa-solid fa-phone-volume"></i>
+                <p><span>phone:</span>+88018181587962</p>
+              </div>
+              <div class="form-single-address">
+                <i class="fa-regular fa-paper-plane"></i>
+                <p><span>Email:</span> roton54845@gmail.com</p>
+              </div>
+              <div class="form-single-address">
+                <i class="fa-solid fa-earth-americas"></i>
+                <p><span>Web:</span>www.programming shikhbo</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+    <!-- footer section code starts here -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-singleitem-parents">
+          <div class="footer-singleitem">
+            <h3>Find Us</h3> 
+            <p class="footer-firstdiv-p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nobis praesentium eos est at minus deserunt sed dolor eligendi facilis.</p>
+
+            <p><i class="fa-regular fa-paper-plane"></i>2576/25 sec 7 Road 32</p>
+            <p class="footer-firstdiv-p2"><i class="fa-solid fa-phone"></i>+880012348796</p>
+            <p><i class="fa-solid fa-envelope"></i>info@example.com</p>
+
+          </div>
+          <div class="footer-singleitem">
+            <h3>Quick Links</h3>
+            <p>CSS</p>
+            <p>Bootstrap</p>
+            <p>JavaScript</p>
+            <p>ES6</p>
+            <p>React.js</p>
+          
+          </div>
+          <div class="footer-singleitem">
+            <h3>Quick Links</h3>
+            <p>Node.js</p>
+            <p>Express.js</p>
+            <p>MongoDB </p>
+            <p>Github</p>
+            <p>Firebase</p>
+            <p>Reac Native</p>
+
+          </div>
+          <div class="footer-singleitem">
+            <h3>Follow Us</h3>
+            <p><i class="fa-brands fa-facebook"></i>Facebook:...https://www.facebook.com/groups/programingshikhbo</p>
+            <p><i class="fa-brands fa-youtube"></i>Youtube:...https://www.youtube.com/</p>
+            <p><i class="fa-solid fa-pager"></i>FB Page.....<a href="https://www.facebook.com/programingshikhbo"> </a></p>
+
+          </div>
+
+        </div>
+           <hr>
+        <div class="footer-menuitem">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+          <p>Copyright &copy; 2022|| Design with by <span>programing shikhbo</span></p>
+
+        </div>
+
+      </div>
+    </footer>
+
+    
+</body>
+</html>
